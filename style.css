@@ -1,0 +1,31 @@
+body {
+  font-family: sans-serif; /* Choose your font */
+  background-color: #f0f0f0; /* Light background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure full viewport height */
+  margin: 0; /* Remove default margins */
+}
+
+#password-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#main-content {
+  background-color: white; /* Or transparent */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Style other elements as needed */
