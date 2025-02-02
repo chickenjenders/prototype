@@ -3,7 +3,7 @@ const passwordContainer = document.getElementById('password-container');
 const mainContent = document.getElementById('main-content');
 const errorMessage = document.getElementById('error-message');
 
-const correctPassword = "your_secret_password"; // **REPLACE THIS!**
+const correctPassword = "BOO"; // **REPLACE THIS!**
 
 function checkPassword() {
   const enteredPassword = passwordInput.value;
