@@ -28,4 +28,34 @@ body {
   margin-top: 10px;
 }
 
-/* Style other elements as needed */
+/* ... (previous CSS) ... */
+
+#club-page {
+  /* Style the main club page container */
+  padding: 20px;
+}
+
+#club-page section {
+  margin-bottom: 20px; /* Spacing between sections */
+  border-bottom: 1px solid #ccc; /* Separator line */
+  padding-bottom: 10px;
+}
+
+#club-page h1, h2 {
+text-align: center;
+}
+
+#newsletter input[type="email"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#newsletter button {
+  padding: 5px 10px;
+  background-color: #007bff; /* Example color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
