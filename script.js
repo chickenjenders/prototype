@@ -3,7 +3,7 @@ const passwordContainer = document.getElementById('password-container');
 const mainContent = document.getElementById('main-content');
 const errorMessage = document.getElementById('error-message');
 
-const correctPassword = "BOO"; // **REPLACE THIS!**
+const correctPassword = "BOO"; // Correct password set here
 
 function checkPassword() {
   const enteredPassword = passwordInput.value;
@@ -11,7 +11,7 @@ function checkPassword() {
   if (enteredPassword === correctPassword) {
     passwordContainer.style.display = 'none';
     mainContent.style.display = 'block';
-    errorMessage.textContent = ""; // Clear any previous errors
+    errorMessage.textContent = "";
   } else {
     errorMessage.textContent = "Incorrect passkey. Please try again.";
   }
