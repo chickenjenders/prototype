@@ -80,3 +80,82 @@ text-align: center;
   border-radius: 4px;
   cursor: pointer;
 }
+/* ... (previous styles) ... */
+
+#club-page {
+  display: flex;
+  flex-direction: column; /* Stack header, main, footer */
+  min-height: 100%; /* Ensure full height of main content area */
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #ffc;
+}
+
+main {
+  display: flex;
+  flex-grow: 1; /* Allow main to take up available space */
+  padding: 20px;
+}
+
+#featured-content {
+  flex: 1; /* Featured content takes up more space */
+  margin-right: 20px;
+}
+
+#featured-content img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Prevents image from affecting layout */
+  margin-bottom: 10px;
+}
+
+#recent-articles {
+  flex: 1;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column; /* Stack articles vertically */
+}
+
+.article-list article {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ffc;
+  padding-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #ffc;
+}
+
+/* Cyberpunk Glitch Effects */
+h1, h2, h3, p, a {
+  transition: all 0.2s ease; /* For smooth transitions */
+}
+
+h1:hover, h2:hover, h3:hover, p:hover, a:hover {
+  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0; /* Green glow on hover */
+  animation: glitch 0.3s infinite; /* Apply glitch animation */
+}
+
+@keyframes glitch {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2px, 2px); }
+  50% { transform: translate(2px, -2px); }
+  75% { transform: translate(-1px, 1px); }
+  100% { transform: translate(0, 0); }
+}
+
+img {
+  filter: grayscale(80%); /* Darker images */
+  transition: filter 0.3s ease; /* Smooth transition for filter */
+}
+
+img:hover {
+  filter: grayscale(0%); /* Remove grayscale on hover */
+}
