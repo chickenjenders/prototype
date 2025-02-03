@@ -1,46 +1,45 @@
 body {
-  background-color: #000; /* Black background */
-  color: #ffc; /* Off-white/yellowish text color */
-  font-family: "Courier New", monospace;
+  background-color: #000;
+  color: #ffc;
+  font-family: "Courier New", monospace; /* Or another monospace font */
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  overflow: hidden; /* Prevents scrollbars */
 }
 
 #password-container {
-  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 20px;
-  border: 2px solid #ffc; /* Matching border */
+  border: 2px solid #ffc;
   border-radius: 10px;
   text-align: center;
 }
 
 #main-content {
-  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
-  color: #ffc; /* Off-white/yellowish text */
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffc;
   padding: 20px;
-  border: 2px solid #ffc; /* Matching border */
+  border: 2px solid #ffc;
   border-radius: 10px;
 }
 
 #password-input {
-  background-color: #000; /* Black input background */
-  color: #ffc; /* Yellowish text */
-  border: 1px solid #ffc; /* Yellow border */
+  background-color: #000;
+  color: #ffc;
+  border: 1px solid #ffc;
   padding: 5px;
   margin-right: 10px;
-  font-family: monospace; /* Monospace font */
+  font-family: monospace;
 }
 
 #password-container button {
-  background-color: #000; /* Black background */
-  color: #ffc; /* Yellow text */
-  border: 1px solid #ffc; /* Yellow border */
+  background-color: #000;
+  color: #ffc;
+  border: 1px solid #ffc;
   padding: 5px 10px;
-  font-family: monospace; /* Monospace font */
+  font-family: monospace;
   cursor: pointer;
 }
 
@@ -49,98 +48,96 @@ body {
   margin-top: 10px;
 }
 
-/* ... (previous CSS) ... */
-
-#club-page {
-  /* Style the main club page container */
-  padding: 20px;
-}
-
-#club-page section {
-  margin-bottom: 20px; /* Spacing between sections */
-  border-bottom: 1px solid #ccc; /* Separator line */
-  padding-bottom: 10px;
-}
-
-#club-page h1, h2 {
-text-align: center;
-}
-
-#newsletter input[type="email"] {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#newsletter button {
-  padding: 5px 10px;
-  background-color: #007bff; /* Example color */
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-/* ... (previous styles) ... */
-
-#club-page {
-  display: flex;
-  flex-direction: column; /* Stack header, main, footer */
-  min-height: 100%; /* Ensure full height of main content area */
-}
-
+/* Header Styles */
 header {
-  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 20px 0;
   border-bottom: 1px solid #ffc;
 }
 
-main {
+.header-content {
   display: flex;
-  flex-grow: 1; /* Allow main to take up available space */
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.site-title h1 {
+  font-family: "Baskerville Old Face", serif;
+  font-size: 2em;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  color: #ffc;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content Styles */
+main {
   padding: 20px;
+  flex-grow: 1; /* Important for taking up available space */
 }
 
-#featured-content {
-  flex: 1; /* Featured content takes up more space */
-  margin-right: 20px;
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
 }
 
-#featured-content img {
+article {
+  border: 1px solid #ffc;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black for articles */
+}
+
+article img {
   max-width: 100%;
   height: auto;
-  display: block; /* Prevents image from affecting layout */
-  margin-bottom: 10px;
+  filter: grayscale(80%); /* Darker images */
+  transition: filter 0.3s ease;
 }
 
-#recent-articles {
-  flex: 1;
+article img:hover {
+  filter: grayscale(0%);
 }
 
-.article-list {
-  display: flex;
-  flex-direction: column; /* Stack articles vertically */
+article h3 {
+  margin-top: 10px; /* Add some space above the title */
 }
 
-.article-list article {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ffc;
-  padding-bottom: 10px;
-}
-
+/* Footer Styles */
 footer {
   text-align: center;
   padding: 20px 0;
   border-top: 1px solid #ffc;
 }
 
+
 /* Cyberpunk Glitch Effects */
 h1, h2, h3, p, a {
-  transition: all 0.2s ease; /* For smooth transitions */
+  transition: all 0.2s ease;
 }
 
 h1:hover, h2:hover, h3:hover, p:hover, a:hover {
-  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0; /* Green glow on hover */
-  animation: glitch 0.3s infinite; /* Apply glitch animation */
+  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+  animation: glitch 0.3s infinite;
 }
 
 @keyframes glitch {
@@ -151,11 +148,6 @@ h1:hover, h2:hover, h3:hover, p:hover, a:hover {
   100% { transform: translate(0, 0); }
 }
 
-img {
-  filter: grayscale(80%); /* Darker images */
-  transition: filter 0.3s ease; /* Smooth transition for filter */
-}
-
-img:hover {
-  filter: grayscale(0%); /* Remove grayscale on hover */
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
 }

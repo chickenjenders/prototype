@@ -13,6 +13,6 @@ function checkPassword() {
     mainContent.style.display = 'block';
     errorMessage.textContent = "";
   } else {
-    errorMessage.textContent = "Incorrect passkey. Please try again.";
+    errorMessage.textContent = "Incorrect passkey. Try again.";
   }
 }
