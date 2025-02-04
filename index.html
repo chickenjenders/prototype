@@ -7,6 +7,7 @@
 </head>
 
 <body>
+  <!-- Global Password Entry -->
   <div id="password-container">
     <h1>W̶̮͋͝E̵̩̣̚L̴͚͔̈́̄Ċ̴̥͗O̵̙̾M̴̫̠͂Ē̵͍</h1>
     <p>Enter the passkey:</p>
@@ -15,8 +16,53 @@
     <p id="error-message"></p>
   </div>
 
+  <!-- Puzzle Layers Container -->
+  <div id="puzzle-container" style="display:none;">
+    <!-- Puzzle 1 -->
+    <div class="puzzle-page" id="puzzle1">
+      <h2>Puzzle 1: Decode the Message</h2>
+      <p>Hint: The key is hidden in a simple cipher.</p>
+      <!-- Example: a scrambled message that decodes to "ALPHA" -->
+      <p class="cipher-text">NCUZZ</p>
+      <input type="text" id="puzzle1-input" placeholder="Enter answer">
+      <button onclick="checkPuzzle(1, 'ALPHA')">Submit Answer</button>
+      <p class="puzzle-error" id="puzzle1-error"></p>
+    </div>
+
+    <!-- Puzzle 2 -->
+    <div class="puzzle-page" id="puzzle2" style="display:none;">
+      <h2>Puzzle 2: Image Clue</h2>
+      <p>Hover over the image and note the number in the corner.</p>
+      <img src="puzzle2.jpg" alt="Puzzle Image" width="400">
+      <input type="text" id="puzzle2-input" placeholder="Enter number">
+      <button onclick="checkPuzzle(2, '42')">Submit Answer</button>
+      <p class="puzzle-error" id="puzzle2-error"></p>
+    </div>
+
+    <!-- Puzzle 3 -->
+    <div class="puzzle-page" id="puzzle3" style="display:none;">
+      <h2>Puzzle 3: Riddle</h2>
+      <p>What has keys but can't open locks?</p>
+      <input type="text" id="puzzle3-input" placeholder="Your answer">
+      <button onclick="checkPuzzle(3, 'piano')">Submit Answer</button>
+      <p class="puzzle-error" id="puzzle3-error"></p>
+    </div>
+
+    <!-- Puzzle 4 -->
+    <div class="puzzle-page" id="puzzle4" style="display:none;">
+      <h2>Puzzle 4: Final Cipher</h2>
+      <p>Solve this: <em>Atbash cipher</em> of "MRTSG:"</p>
+      <input type="text" id="puzzle4-input" placeholder="Your answer">
+      <button onclick="checkPuzzle(4, 'NIGHT:')">Submit Answer</button>
+      <p class="puzzle-error" id="puzzle4-error"></p>
+    </div>
+  </div>
+
+  <!-- Main Content, unlocked after puzzles -->
   <div id="main-content" style="display:none;">
+    <!-- Your club content goes here -->
     <div id="club-page">
+      <!-- (Content from your original HTML) -->
       <header>
         <div class="header-content">
           <div class="site-title">
@@ -33,40 +79,14 @@
           </nav>
         </div>
       </header>
-
       <main>
-        <section id="featured-content">
-          <article>
-            <h2>Featured Article Title</h2>
-            <img src="img1.jpeg" width="600" height="400" alt=" UCF housing at night">
-            <p>Summary or excerpt of the article...</p>
-            <a href="#">Read More</a>
-          </article>
-        </section>
-
-        <section id="recent-articles">
-          <h2>Recent Articles</h2>
-          <div class="article-list">
-            <article>
-              <h3>Article Title 1</h3>
-              <p>Short excerpt...</p>
-              <a href="#">Read More</a>
-            </article>
-            <article>
-              <h3>Article Title 2</h3>
-              <p>Short excerpt...</p>
-              <a href="#">Read More</a>
-            </article>
-          </div>
-        </section>
+        <h1>YOU DID IT</h1>
       </main>
-
       <footer>
         <p>&copy; 2025 ØỮŘ ĆŁỮβ</p>
       </footer>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 

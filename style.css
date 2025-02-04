@@ -151,3 +151,18 @@ h1:hover, h2:hover, h3:hover, p:hover, a:hover {
 h1 {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.puzzle-page {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border: 2px solid #ffc;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px;
+}
+
+/* Optional: Style for error messages in puzzle pages */
+.puzzle-error {
+  color: red;
+  margin-top: 10px;
+}
