@@ -4,7 +4,7 @@ const errorMessage = document.getElementById('error-message');
 const puzzleContainer = document.getElementById('puzzle-container'); // Ensure this element exists
 const mainContent = document.getElementById('main-content');
 
-const correctPassword = "BOO"; // Global passkey
+const correctPassword = "NIGHT"; // Global passkey
 
 function checkPassword() {
   const enteredPassword = passwordInput.value;
@@ -19,8 +19,8 @@ function checkPassword() {
 
 // Array of puzzle answers for simplicity
 const puzzleAnswers = {
-  1: 'ALPHA',
-  2: '42',
+  1: 'Arboretum',
+  2: '12:45',
   3: 'piano',
   4: 'NIGHT:'
 };
