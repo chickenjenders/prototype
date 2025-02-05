@@ -4,34 +4,41 @@ const errorMessage = document.getElementById('error-message');
 const puzzleContainer = document.getElementById('puzzle-container');
 const mainContent = document.getElementById('main-content');
 
-const correctPassword = "NIGHT".toLowerCase(); // Store lowercase version
-
-function checkPassword() {
-  const enteredPassword = passwordInput.value.toLowerCase(); // Convert input to lowercase
-  if (enteredPassword === correctPassword) {
+const correctPasswordHash = "176473d7313395b6e209bc6b1d57aa160b628706860aa0554d7af60a1d40ab87"; // Use the provided hash
+async function hashPassword(password) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(password);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(hashBuffer))
+    .map(byte => byte.toString(16).padStart(2, '0'))
+    .join('');
+}
+async function checkPassword() {
+  const enteredPasswordHash = await hashPassword(passwordInput.value); // Hash the entered password
+  if (enteredPasswordHash === correctPasswordHash) {
     passwordContainer.style.display = 'none';
     puzzleContainer.style.display = 'block';
     errorMessage.textContent = "";
   } else {
     errorMessage.textContent = "Incorrect passkey. Try again.";
+    console.log(enteredPasswordHash)
   }
 }
 
 const puzzleAnswers = {
-  1: 'clock'.toLowerCase(), // Store lowercase versions of answers
-  2: '12:45'.toLowerCase(),
-  3: 'Arboretum'.toLowerCase(),
-  4: 'silence'.toLowerCase()
+  1: "d8198efa3604d164853468608c55efa148bc56e3564d5a30232bf98b8ab43aeb", // Use the provided hashes
+  2: "1ab3766c58d639512f626553c30f1358fb20f384756142829cc2b5f62328baed",
+  3: "6820396bce785650e13514da2ec4929ff0c0fddc809f80aec2f623c55c4a3877",
+  4: "e6c18fdbe59783dfefef3595cd288bcb7ce912d36854b5e8faaef31235d9031b"
 };
 
-function checkPuzzle(puzzleNumber) { // No need to pass correctAnswer as it's in puzzleAnswers
+async function checkPuzzle(puzzleNumber) {
   const inputField = document.getElementById(`puzzle${puzzleNumber}-input`);
-  const userAnswer = inputField.value.trim().toLowerCase(); // Convert user input to lowercase
-  const errorField = document.getElementById(`puzzle${puzzleNumber}-error`);
-  const correctAnswer = puzzleAnswers[puzzleNumber]; // Retrieve correct answer
+  const userAnswerHash = await hashPassword(inputField.value.trim()); // Hash user input
+  const correctAnswerHash = puzzleAnswers[puzzleNumber];
 
-  if (userAnswer === correctAnswer) { // Compare lowercase versions
-    errorField.textContent = "";
+  if (userAnswerHash === correctAnswerHash) {
+    errorMessage.textContent = "";
     document.getElementById(`puzzle${puzzleNumber}`).style.display = 'none';
     if (puzzleNumber < 4) {
       document.getElementById(`puzzle${puzzleNumber + 1}`).style.display = 'block';
@@ -40,6 +47,6 @@ function checkPuzzle(puzzleNumber) { // No need to pass correctAnswer as it's in
       mainContent.style.display = 'block';
     }
   } else {
-    errorField.textContent = "Wrong answer. Try again.";
+    errorMessage.textContent = "Wrong answer. Try again.";
   }
 }

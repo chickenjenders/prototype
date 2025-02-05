@@ -19,47 +19,41 @@
     <p id="error-message"></p>
   </div>
 
-  <!-- Puzzle Layers Container -->
   <div id="puzzle-container" style="display:none;">
-    <!-- Puzzle 1 -->
     <div class="puzzle-page" id="puzzle1">
       <h2>Now the real test begins.</h2>
       <p>What has hands and a face, but can’t touch or see?</p>
-      <form onsubmit="checkPuzzle(1, 'Arboretum'); return false;">
-        <input type="text" id="puzzle1-input" placeholder="Enter answer">
+      <form onsubmit="checkPuzzle(1); return false;"> <input type="text" id="puzzle1-input" placeholder="Enter answer">
         <button type="submit">Submit Answer</button>
       </form>
       <p class="puzzle-error" id="puzzle1-error"></p>
     </div>
 
-    <!-- Puzzle 2 -->
     <div class="puzzle-page" id="puzzle2" style="display:none;">
       <h2>Punctuality is key.</h2>
       <p>Will you be on <a href="https://puzzel.org/en/jigsaw/play?p=-OIIADdD9y467QxcdIjj" target="_blank">time</a>?</p>
-      <form onsubmit="checkPuzzle(2, '12:45'); return false;">
+      <form onsubmit="checkPuzzle(2); return false;">
         <input type="text" id="puzzle2-input" placeholder="">
         <button type="submit">Submit Answer</button>
       </form>
       <p class="puzzle-error" id="puzzle2-error"></p>
     </div>
 
-    <!-- Puzzle 3 -->
     <div class="puzzle-page" id="puzzle3" style="display:none;">
       <h2>Come find us.</h2>
       <p>Where will we <a href="https://puzzel.org/en/crossword/play?p=-OIIF6SfDg1DswCJq_pR" target="_blank">meet</a>?
       </p>
-      <form onsubmit="checkPuzzle(3, 'Arboretum'); return false;">
+      <form onsubmit="checkPuzzle(3); return false;">
         <input type="text" id="puzzle3-input" placeholder="Your answer">
         <button type="submit">Submit Answer</button>
       </form>
       <p class="puzzle-error" id="puzzle3-error"></p>
     </div>
 
-    <!-- Puzzle 4 -->
     <div class="puzzle-page" id="puzzle4" style="display:none;">
       <h2>We expect your cooperation.</h2>
       <p>What do you break the moment you name it?</p>
-      <form onsubmit="checkPuzzle(4, 'silence'); return false;">
+      <form onsubmit="checkPuzzle(4); return false;">
         <input type="text" id="puzzle4-input" placeholder="Your answer">
         <button type="submit">Submit Answer</button>
       </form>
