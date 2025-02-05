@@ -21,8 +21,8 @@ function checkPassword() {
 const puzzleAnswers = {
   1: 'Arboretum',
   2: '12:45',
-  3: 'piano',
-  4: 'NIGHT:'
+  3: 'silence',
+  4: 'clock'
 };
 
 function checkPuzzle(puzzleNumber, correctAnswer) {
