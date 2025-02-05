@@ -204,3 +204,101 @@ a {
   color: #ffc;
 
 }
+/* ... (previous CSS styles) ... */
+
+/* Creepy Hub Styles */
+.creepy-hub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+  color: #ffc;
+  min-height: calc(100vh - 120px); /* Adjust for header and footer */
+}
+
+.hub-content {
+  display: flex;
+  align-items: center;
+}
+
+
+.distorted-image {
+  text-align: center;
+  width: 300px; 
+  height: auto;
+  margin-bottom: 20px;
+  overflow: hidden; /* Hide any overflow from distortion */
+}
+
+.distorted-image img {
+  width: 100%;
+  height: auto;
+  /* Add any filter or transform for distortion effect */
+  filter: blur(2px); /* Example: subtle blur */
+  transform: rotate(-5deg); /* Example: slight rotation */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
+}
+
+.distorted-image:hover img {
+  filter: blur(0); /* Remove blur on hover */
+  transform: rotate(0); /* Remove rotation on hover */
+  
+}
+
+
+.glitch-text h2 {
+  font-size: 2em;
+  animation: glitch 0.5s infinite; /* Apply glitch animation */
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0; /* Green glow */
+}
+
+.strange-message {
+  font-style: italic;
+  margin-bottom: 20px;
+  text-shadow: 0 0 3px #0f0; /* Green glow */
+}
+
+.navigation {
+  display: flex;
+  gap: 20px;
+}
+
+.navigation a {
+  color: #ffc;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid #ffc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  background-color: rgba(0, 0, 0, 0.5); /* Slightly darker background */
+}
+
+.navigation a:hover {
+  background-color: rgba(255, 252, 204, 0.2); /* Slightly lighter background on hover */
+  color: #0f0; /* Green text on hover */
+}
+
+/* ... (rest of your CSS) ... */
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .creepy-hub {
+      min-height: auto; /* Let content determine height on mobile */
+  }
+
+  .distorted-image {
+      width: 90%; /* Make image responsive on mobile */
+  }
+
+  .navigation {
+      flex-direction: column; /* Stack navigation links on mobile */
+      align-items: center;
+  }
+
+  .navigation a {
+      margin-bottom: 10px; /* Add spacing between stacked links */
+  }
+}
