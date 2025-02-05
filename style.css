@@ -283,22 +283,43 @@ a {
 
 /* ... (rest of your CSS) ... */
 
-/* Responsive Styles */
 @media (max-width: 600px) {
   .creepy-hub {
       min-height: auto; /* Let content determine height on mobile */
+      padding: 10px; /* Reduce padding */
+  }
+
+  .hub-content {
+      flex-direction: column; /* Stack on mobile */
+      align-items: center;
+      margin-bottom: 10px; /* Reduce margin */
   }
 
   .distorted-image {
-      width: 90%; /* Make image responsive on mobile */
+      width: 90%; /* Make image responsive */
+      margin-bottom: 10px;
+  }
+
+  .image-gallery {
+      flex-direction: column; /* Stack images */
+      align-items: center;
+      gap: 10px; /* Consistent gap */
+  }
+
+  .gallery-image {
+      max-width: 90%; /* Images fill most of the screen */
+      margin-bottom: 10px;
   }
 
   .navigation {
-      flex-direction: column; /* Stack navigation links on mobile */
+      flex-direction: column; /* Stack navigation */
       align-items: center;
+      gap: 10px; /* Consistent gap */
   }
 
   .navigation a {
-      margin-bottom: 10px; /* Add spacing between stacked links */
+      margin-bottom: 10px; /* Space between links */
+      width: 90%; /* Make links fill screen width */
+      box-sizing: border-box; /* Include padding and border in width */
   }
 }
