@@ -1,43 +1,41 @@
 const passwordInput = document.getElementById('password-input');
 const passwordContainer = document.getElementById('password-container');
 const errorMessage = document.getElementById('error-message');
-const puzzleContainer = document.getElementById('puzzle-container'); // Ensure this element exists
+const puzzleContainer = document.getElementById('puzzle-container');
 const mainContent = document.getElementById('main-content');
 
-const correctPassword = "NIGHT"; // Global passkey
+const correctPassword = "NIGHT".toLowerCase(); // Store lowercase version
 
 function checkPassword() {
-  const enteredPassword = passwordInput.value;
+  const enteredPassword = passwordInput.value.toLowerCase(); // Convert input to lowercase
   if (enteredPassword === correctPassword) {
     passwordContainer.style.display = 'none';
-    puzzleContainer.style.display = 'block'; // Ensure this element is displayed
+    puzzleContainer.style.display = 'block';
     errorMessage.textContent = "";
   } else {
     errorMessage.textContent = "Incorrect passkey. Try again.";
   }
 }
 
-// Array of puzzle answers for simplicity
 const puzzleAnswers = {
-  1: 'Arboretum',
-  2: '12:45',
-  3: 'silence',
-  4: 'clock'
+  1: 'clock'.toLowerCase(), // Store lowercase versions of answers
+  2: '12:45'.toLowerCase(),
+  3: 'Arboretum'.toLowerCase(),
+  4: 'silence'.toLowerCase()
 };
 
-function checkPuzzle(puzzleNumber, correctAnswer) {
+function checkPuzzle(puzzleNumber) { // No need to pass correctAnswer as it's in puzzleAnswers
   const inputField = document.getElementById(`puzzle${puzzleNumber}-input`);
-  const userAnswer = inputField.value.trim().toLowerCase();
+  const userAnswer = inputField.value.trim().toLowerCase(); // Convert user input to lowercase
   const errorField = document.getElementById(`puzzle${puzzleNumber}-error`);
+  const correctAnswer = puzzleAnswers[puzzleNumber]; // Retrieve correct answer
 
-  if (userAnswer === correctAnswer.toLowerCase()) {
+  if (userAnswer === correctAnswer) { // Compare lowercase versions
     errorField.textContent = "";
-    // Hide current puzzle and show next puzzle or main content
     document.getElementById(`puzzle${puzzleNumber}`).style.display = 'none';
     if (puzzleNumber < 4) {
       document.getElementById(`puzzle${puzzleNumber + 1}`).style.display = 'block';
     } else {
-      // Final puzzle solved, unlock main content
       puzzleContainer.style.display = 'none';
       mainContent.style.display = 'block';
     }

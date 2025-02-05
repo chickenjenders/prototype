@@ -137,7 +137,7 @@ h1, h2, h3, p, a {
   transition: all 0.2s ease;
 }
 
-h1:hover, h2:hover, h3:hover, p:hover, a:hover {
+h1:hover, h2:hover, a:hover {
   text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
   animation: glitch 0.3s infinite;
 }
@@ -198,4 +198,9 @@ h1 {
   .puzzle-page {
     margin: 10px;
   }
+}
+
+a {
+  color: #ffc;
+
 }

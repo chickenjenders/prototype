@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
-  <title>The Mysterious Club</title>
+  <title>Join Us</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,8 +12,10 @@
   <div id="password-container">
     <h1>W̶̮͋͝E̵̩̣̚L̴͚͔̈́̄Ċ̴̥͗O̵̙̾M̴̫̠͂Ē̵͍</h1>
     <p>Enter the passkey:</p>
-    <input type="password" id="password-input">
-    <button onclick="checkPassword()">Submit</button>
+    <form onsubmit="checkPassword(); return false;">
+      <input type="password" id="password-input">
+      <button type="submit">Submit</button>
+    </form>
     <p id="error-message"></p>
   </div>
 
@@ -21,40 +23,46 @@
   <div id="puzzle-container" style="display:none;">
     <!-- Puzzle 1 -->
     <div class="puzzle-page" id="puzzle1">
-      <h2>Thought it'd be that easy?</h2>
+      <h2>Now the real test begins.</h2>
       <p>What has hands and a face, but can’t touch or see?</p>
-      <!-- Example: a scrambled message that decodes to "ALPHA" -->
-      <p class="cipher-text">NCUZZ</p>
-      <input type="text" id="puzzle1-input" placeholder="Enter answer">
-      <button onclick="checkPuzzle(1, 'Arboretum')">Submit Answer</button>
+      <form onsubmit="checkPuzzle(1, 'Arboretum'); return false;">
+        <input type="text" id="puzzle1-input" placeholder="Enter answer">
+        <button type="submit">Submit Answer</button>
+      </form>
       <p class="puzzle-error" id="puzzle1-error"></p>
     </div>
 
     <!-- Puzzle 2 -->
     <div class="puzzle-page" id="puzzle2" style="display:none;">
-      <h2>Puzzle 2: Image Clue</h2>
-      <p>Hover over the image and note the number in the corner.</p>
-      <img src="puzzle2.jpg" alt="Puzzle Image" width="400">
-      <input type="text" id="puzzle2-input" placeholder="Enter number">
-      <button onclick="checkPuzzle(2, '12:45')">Submit Answer</button>
+      <h2>Punctuality is key.</h2>
+      <p>Will you be on <a href="https://puzzel.org/en/jigsaw/play?p=-OIIADdD9y467QxcdIjj" target="_blank">time</a>?</p>
+      <form onsubmit="checkPuzzle(2, '12:45'); return false;">
+        <input type="text" id="puzzle2-input" placeholder="">
+        <button type="submit">Submit Answer</button>
+      </form>
       <p class="puzzle-error" id="puzzle2-error"></p>
     </div>
 
     <!-- Puzzle 3 -->
     <div class="puzzle-page" id="puzzle3" style="display:none;">
-      <h2>Puzzle 3: Riddle</h2>
-      <p>What has keys but can't open locks?</p>
-      <input type="text" id="puzzle3-input" placeholder="Your answer">
-      <button onclick="checkPuzzle(3, 'piano')">Submit Answer</button>
+      <h2>Come find us.</h2>
+      <p>Where will we <a href="https://puzzel.org/en/crossword/play?p=-OIIF6SfDg1DswCJq_pR" target="_blank">meet</a>?
+      </p>
+      <form onsubmit="checkPuzzle(3, 'Arboretum'); return false;">
+        <input type="text" id="puzzle3-input" placeholder="Your answer">
+        <button type="submit">Submit Answer</button>
+      </form>
       <p class="puzzle-error" id="puzzle3-error"></p>
     </div>
 
     <!-- Puzzle 4 -->
     <div class="puzzle-page" id="puzzle4" style="display:none;">
-      <h2>Puzzle 4: Final Cipher</h2>
-      <p>Solve this: <em>Atbash cipher</em> of "MRTSG:"</p>
-      <input type="text" id="puzzle4-input" placeholder="Your answer">
-      <button onclick="checkPuzzle(4, 'NIGHT:')">Submit Answer</button>
+      <h2>We expect your cooperation.</h2>
+      <p>What do you break the moment you name it?</p>
+      <form onsubmit="checkPuzzle(4, 'silence'); return false;">
+        <input type="text" id="puzzle4-input" placeholder="Your answer">
+        <button type="submit">Submit Answer</button>
+      </form>
       <p class="puzzle-error" id="puzzle4-error"></p>
     </div>
   </div>
