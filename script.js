@@ -28,4 +28,59 @@ async function checkPassword() {
   }
 }
 
+// Initialize xterm.js terminal
+const terminalContainer = document.getElementById('terminal-container');
+const term = new Terminal({
+  cols: 80,
+  rows: 12,
+  cursorBlink: true
+});
+term.open(terminalContainer);
 
+// Set up a prompt mechanism
+let commandBuffer = "";
+const prompt = () => {
+  term.write('\r\n$ ');
+};
+
+// Write a welcome message
+term.writeln('Terminal Hacking Demo');
+prompt();
+
+// Listen for data input
+term.onData(data => {
+  // Handle backspace
+  if (data === '\u007F') { // Backspace character
+    if (commandBuffer.length > 0) {
+      commandBuffer = commandBuffer.slice(0, -1);
+      term.write('\b \b');
+    }
+    return;
+  }
+
+  // When user presses Enter
+  if (data === '\r') {
+    // Process the command in commandBuffer
+    processCommand(commandBuffer.trim());
+    commandBuffer = "";
+    prompt();
+  } else {
+    commandBuffer += data;
+    term.write(data);
+  }
+});
+
+function processCommand(cmd) {
+  if (cmd.toLowerCase() === 'reveal') {
+    // Reveal the image gallery by changing its display property
+    const gallery = document.querySelector('.image-gallery');
+    if (gallery) {
+      gallery.style.display = 'flex';  // Or any appropriate display style
+      term.writeln('\r\n[INFO] Gallery Revealed!');
+    } else {
+      term.writeln('\r\n[ERROR] Gallery not found.');
+    }
+  } else {
+    term.writeln(`\r\n[ERROR] Unknown command: ${cmd}`);
+  }
+}

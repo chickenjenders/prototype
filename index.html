@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<head>
-  <title>Join Us</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
 <body>
   <!-- Global Password Entry -->
   <div id="password-container">
@@ -19,46 +10,8 @@
     <p id="error-message"></p>
   </div>
 
-  <div id="puzzle-container" style="display:none;">
-    <div class="puzzle-page" id="puzzle1">
-      <h2>Now the real test begins.</h2>
-      <p>What has hands and a face, but can’t touch or see?</p>
-      <form onsubmit="checkPuzzle(1); return false;"> <input type="text" id="puzzle1-input" placeholder="Enter answer">
-        <button type="submit">Submit Answer</button>
-      </form>
-      <p class="puzzle-error" id="puzzle1-error"></p>
-    </div>
-
-    <div class="puzzle-page" id="puzzle2" style="display:none;">
-      <h2>Punctuality is key.</h2>
-      <p>Will you be on <a href="https://puzzel.org/en/jigsaw/play?p=-OIIADdD9y467QxcdIjj" target="_blank">time</a>?</p>
-      <form onsubmit="checkPuzzle(2); return false;">
-        <input type="text" id="puzzle2-input" placeholder="">
-        <button type="submit">Submit Answer</button>
-      </form>
-      <p class="puzzle-error" id="puzzle2-error"></p>
-    </div>
-
-    <div class="puzzle-page" id="puzzle3" style="display:none;">
-      <h2>Come find us.</h2>
-      <p>Where will we <a href="https://puzzel.org/en/crossword/play?p=-OIIF6SfDg1DswCJq_pR" target="_blank">meet</a>?
-      </p>
-      <form onsubmit="checkPuzzle(3); return false;">
-        <input type="text" id="puzzle3-input" placeholder="Your answer">
-        <button type="submit">Submit Answer</button>
-      </form>
-      <p class="puzzle-error" id="puzzle3-error"></p>
-    </div>
-
-    <div class="puzzle-page" id="puzzle4" style="display:none;">
-      <h2>We expect your cooperation.</h2>
-      <p>What do you break the moment you name it?</p>
-      <form onsubmit="checkPuzzle(4); return false;">
-        <input type="text" id="puzzle4-input" placeholder="Your answer">
-        <button type="submit">Submit Answer</button>
-      </form>
-      <p class="puzzle-error" id="puzzle4-error"></p>
-    </div>
+  <!-- Terminal Container for xterm.js -->
+  <div id="terminal-container" style="width: 100%; height: 200px; background: black; color: lime; margin-bottom: 20px;">
   </div>
 
   <div id="main-content" style="display:none;">
@@ -94,7 +47,8 @@
             </div>
           </div>
 
-          <div class="image-gallery">
+          <!-- Hide the gallery initially -->
+          <div class="image-gallery" style="display: none;">
             <img src="img1.jpeg" alt="Image 1" class="gallery-image" width="600" height="400">
             <img src="img2.png" alt="Image 2" class="gallery-image" width="600" height="400">
             <img src="img3.png" alt="Image 3" class="gallery-image" width="600" height="400">
@@ -108,5 +62,3 @@
   </div>
   <script src="script.js"></script>
 </body>
-
-</html>
