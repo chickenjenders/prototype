@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   };
 
   // Write a welcome message
-  term.writeln('Terminal Hacking Demo');
+  term.writeln('Club Terminal Base');
   prompt();
 
   // Listen for data input
