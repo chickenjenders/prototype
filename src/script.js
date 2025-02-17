@@ -88,4 +88,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
       term.writeln(`\r\n[ERROR] Unknown command: ${cmd}`);
     }
   }
+
+  document.getElementById('password-form').addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevents the default form submission
+    checkPassword();
+  });
 });
