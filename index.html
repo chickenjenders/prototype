@@ -48,6 +48,20 @@
             <div class="text-content">
               <div class="glitch-text">
                 <h2>Welcome, Initiate</h2>
+                <button onclick="triggerStage3()">Click for Next Clue</button>
+
+<script>
+  function triggerStage3() {
+    const playerEmail = prompt("Enter your email to continue:");
+    if (playerEmail) {
+      fetch(`https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec?email=${encodeURIComponent(playerEmail)}&trigger=stage3ButtonClick`)
+        .then(response => response.json())
+        .then(data => alert(data.message))
+        .catch(error => console.error("Error:", error));
+    }
+  }
+</script>
+
               </div>
               <div class="strange-message">
                 <p>The call is answered. The response is quiet.</p>
