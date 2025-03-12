@@ -9,6 +9,33 @@
 </head>
 
 <body>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Google Apps Script URL (update with your deployed web app URL)
+    let scriptURL = "https://script.google.com/macros/s/AKfycbyf1ApsCNdUv_-NMI5Tc1ljuMldxmil0ZkvnF7vpt-KOgIqExhow36xzVNYGL7q6COJaA/exec";
+    
+    // Use stored playerId if available
+    let playerId = localStorage.getItem("argPlayerId");
+    
+    // Construct the URL without prompting for an email
+    let url = playerId 
+      ? scriptURL + "?pid=" + encodeURIComponent(playerId) + "&trigger=thirdEmail"
+      : scriptURL + "?trigger=thirdEmail"; // No email prompt, just call the endpoint
+    
+    // Call the endpoint, but don't block page navigation if there are errors
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        console.log("Third email trigger response:", data);
+        // Optionally, you can perform additional actions based on the response here
+      })
+      .catch(error => {
+        console.error("Error triggering third email:", error);
+        // Continue normally even if there's an error
+      });
+  }); // <-- This closes the DOMContentLoaded listener
+</script>
+
   <!-- Global Password Entry -->
   <div id="password-container">
     <h1>W̶̮͋͝E̵̩̣̚L̴͚͔̈́̄Ċ̴̥͗O̵̙̾M̴̫̠͂Ē̵͍</h1>
